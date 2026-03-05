@@ -16,7 +16,7 @@ const Hero = ({ onOpenQuiz }: HeroProps) => {
     >
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-40" />
+        <img src={heroBg} alt="Especialista em SEO local analisando métricas no Google Maps em Fortaleza" className="w-full h-full object-cover opacity-40" loading="eager" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
       </div>
 
