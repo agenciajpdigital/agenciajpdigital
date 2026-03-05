@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, User } from "lucide-react";
 
 const reviews = [
   { name: "Carlos M.", text: "O perfil ficou bem estruturado e começou a gerar mais visibilidade. Recomendo demais!" },
@@ -27,6 +27,8 @@ const Reviews = () => {
     }
     return result;
   };
+
+  const getInitials = (name: string) => name.split(" ").map(n => n[0]).join("");
 
   return (
     <section id="avaliacoes" className="py-20 md:py-28">
@@ -67,7 +69,12 @@ const Reviews = () => {
                   ))}
                 </div>
                 <p className="text-sm text-muted-foreground mb-4 italic">"{r.text}"</p>
-                <span className="text-sm font-medium text-foreground">{r.name}</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-primary/15 border border-primary/20 flex items-center justify-center">
+                    <span className="text-xs font-semibold text-primary">{getInitials(r.name)}</span>
+                  </div>
+                  <span className="text-sm font-medium text-foreground">{r.name}</span>
+                </div>
               </motion.div>
             ))}
           </div>

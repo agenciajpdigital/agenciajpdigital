@@ -1,13 +1,25 @@
 import { motion } from "framer-motion";
 import { MapPin, Clock, Navigation, MessageCircle } from "lucide-react";
+import locationCity from "@/assets/location-city.jpg";
 
 const MAPS_LINK = "https://www.google.com/maps/place/Ag%C3%AAncia+JP+Digital+%E2%80%93+Marketing+Digital+em+Fortaleza/@-3.8022612,-38.5948276,17z/data=!4m6!3m5!1s0x7c74da2e6ba5a6d:0x5e79f0d9817dbac9!8m2!3d-3.8022612!4d-38.5922473!16s%2Fg%2F11s1t7b436";
 const WHATSAPP_LINK = "https://wa.me/5585992113249?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es.";
 
 const LocationSection = () => {
   return (
-    <section id="localizacao" className="py-20 md:py-28 circuit-bg">
-      <div className="container">
+    <section id="localizacao" className="py-20 md:py-28 circuit-bg relative overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src={locationCity}
+          alt="Vista noturna da cidade de Fortaleza com iluminação urbana"
+          className="w-full h-full object-cover opacity-10"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
+      </div>
+
+      <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,7 +42,7 @@ const LocationSection = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Mapa da Agência JP Digital"
+              title="Mapa da Agência JP Digital em Fortaleza"
             />
           </div>
 
