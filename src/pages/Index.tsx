@@ -10,6 +10,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import DiagnosticModal from "@/components/DiagnosticModal";
+import RecorrenciaHome from "@/components/RecorrenciaHome";
 
 const Index = () => {
   const [quizOpen, setQuizOpen] = useState(false);
@@ -19,6 +20,7 @@ const Index = () => {
       <Header onOpenQuiz={() => setQuizOpen(true)} />
       <Hero onOpenQuiz={() => setQuizOpen(true)} />
       <Services />
+      <RecorrenciaHome onOpenQuiz={() => setQuizOpen(true)} />
       <HowItWorks />
       <AboutUs />
       <Reviews />
