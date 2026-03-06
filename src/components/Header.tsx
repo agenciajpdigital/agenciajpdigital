@@ -7,6 +7,7 @@ const WHATSAPP_LINK = "https://wa.me/5585992113249?text=Ol%C3%A1!%20Gostaria%20d
 const navItems = [
   { label: "Início", href: "#inicio" },
   { label: "Serviços", href: "#servicos" },
+  { label: "Recorrência", href: "#recorrencia" },
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Avaliações", href: "#avaliacoes" },
   { label: "Localização", href: "#localizacao" },
