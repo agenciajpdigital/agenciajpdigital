@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { MapPin, ShieldCheck, Star, FileText, Share2, Globe } from "lucide-react";
 
-const buildWhatsAppLink = (servico: string) => {
-  const msg = `Olá! Quero detalhes do serviço: ${servico}.\n\nMinha empresa é: ____\nBairro/Cidade: ____\nJá tenho Perfil da Empresa no Google? (Sim/Não/Não sei).`;
+const buildWhatsAppLink = (servico?: string) => {
+  const titulo = servico?.trim() || "Serviço não informado";
+  const msg = `Olá! Quero detalhes do serviço: ${titulo}.\n\nMinha empresa é: ____\nBairro/Cidade: ____\nJá tenho Perfil da Empresa no Google? (Sim/Não/Não sei).`;
   return `https://wa.me/5585992113249?text=${encodeURIComponent(msg)}`;
 };
 
