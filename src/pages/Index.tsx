@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import DiagnosticModal from "@/components/DiagnosticModal";
 import RecorrenciaHome from "@/components/RecorrenciaHome";
+import RecorrenciaMensalHome from "@/components/RecorrenciaMensalHome";
 
 const Index = () => {
   const [quizOpen, setQuizOpen] = useState(false);
