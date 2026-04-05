@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import DiagnosticModal from "@/components/DiagnosticModal";
 import RecorrenciaHome from "@/components/RecorrenciaHome";
+import RecorrenciaMensalHome from "@/components/RecorrenciaMensalHome";
 
 const Index = () => {
   const [quizOpen, setQuizOpen] = useState(false);
@@ -21,6 +22,7 @@ const Index = () => {
       <Hero onOpenQuiz={() => setQuizOpen(true)} />
       <Services />
       <RecorrenciaHome onOpenQuiz={() => setQuizOpen(true)} />
+      <RecorrenciaMensalHome onOpenQuiz={() => setQuizOpen(true)} />
       <HowItWorks />
       <AboutUs />
       <Reviews />
