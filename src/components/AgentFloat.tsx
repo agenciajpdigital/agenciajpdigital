@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import agentAvatar from "@/assets/agente-vendedor-jp.png";
 
 const WHATSAPP_NUMBER = "5585992113249";
-const AGENT_LINK = "https://chatgpt.com/g/g-69d03cfeca3c8191b3d83327dae19f15-click-jp";
+const AGENT_LINK = "https://chatgpt.com/g/g-69c098d9fbc4819193c81eba0a16a4fe-vendedor-agencia-jp-digital";
 const WHATSAPP_MSG = encodeURIComponent(
   "Olá! Vim do site e quero um diagnóstico do meu negócio no Google/Maps.\n\nNicho: ____.\nBairro/Cidade: ____.\nTenho Perfil do Google? (Sim/Não/Não sei)."
 );
