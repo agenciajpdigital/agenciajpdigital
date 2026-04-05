@@ -31,6 +31,7 @@ const Index = () => {
       <ContactSection />
       <Footer />
       <WhatsAppFloat />
+      <AgentFloat onOpenQuiz={() => setQuizOpen(true)} />
       <DiagnosticModal open={quizOpen} onClose={() => setQuizOpen(false)} />
     </div>
   );
