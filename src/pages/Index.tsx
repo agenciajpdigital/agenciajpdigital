@@ -21,8 +21,8 @@ const Index = () => {
       <Header onOpenQuiz={() => setQuizOpen(true)} />
       <Hero onOpenQuiz={() => setQuizOpen(true)} />
       <Services />
-      <RecorrenciaHome onOpenQuiz={() => setQuizOpen(true)} />
       <RecorrenciaMensalHome onOpenQuiz={() => setQuizOpen(true)} />
+      <RecorrenciaHome onOpenQuiz={() => setQuizOpen(true)} />
       <HowItWorks />
       <AboutUs />
       <Reviews />
