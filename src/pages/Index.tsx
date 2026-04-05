@@ -9,6 +9,7 @@ import LocationSection from "@/components/LocationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import AgentFloat from "@/components/AgentFloat";
 import DiagnosticModal from "@/components/DiagnosticModal";
 import RecorrenciaHome from "@/components/RecorrenciaHome";
 import RecorrenciaMensalHome from "@/components/RecorrenciaMensalHome";
@@ -30,6 +31,7 @@ const Index = () => {
       <ContactSection />
       <Footer />
       <WhatsAppFloat />
+      <AgentFloat onOpenQuiz={() => setQuizOpen(true)} />
       <DiagnosticModal open={quizOpen} onClose={() => setQuizOpen(false)} />
     </div>
   );
