@@ -41,14 +41,12 @@ const Hero = ({ onOpenQuiz }: HeroProps) => {
             >
               Pedir diagnóstico gratuito
             </button>
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={onOpenQuiz}
               className="border border-primary text-primary px-8 py-3.5 rounded-lg font-semibold text-base hover:bg-primary/10 transition-colors text-center"
             >
               Falar no WhatsApp
-            </a>
+            </button>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 text-sm text-muted-foreground">
