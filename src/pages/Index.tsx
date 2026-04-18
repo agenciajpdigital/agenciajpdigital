@@ -30,7 +30,7 @@ const Index = () => {
       <LocationSection />
       <ContactSection />
       <Footer />
-      <WhatsAppFloat />
+      <WhatsAppFloat onOpenQuiz={() => setQuizOpen(true)} />
       <AgentFloat onOpenQuiz={() => setQuizOpen(true)} />
       <DiagnosticModal open={quizOpen} onClose={() => setQuizOpen(false)} />
     </div>
