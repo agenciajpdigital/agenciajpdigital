@@ -167,8 +167,7 @@ Pode me orientar os próximos passos?`;
                 {isLast ? "Enviar" : "Próxima"} <ArrowRight size={16} />
               </button>
             </div>
-          </>
-        ) : (
+
             <div className="mt-4">
               <button
                 onClick={sendWhatsApp}
