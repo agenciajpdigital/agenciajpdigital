@@ -72,7 +72,24 @@ const DiagnosticModal = ({ open, onClose }: DiagnosticModalProps) => {
     if (step > 0) setStep(step - 1);
   };
 
-  const whatsappMsg = `Olá! Quero um diagnóstico do meu Perfil no Google/Maps.\nSegmento: ${answers.nicho || "-"}\nRegião: ${answers.regiao || "-"}\nObjetivo: ${answers.objetivo || "-"}\nLigações/mês: ${answers.ligacoes || "-"}\nPerfil verificado: ${answers.perfilVerificado || "-"}\nHorário de contato: ${answers.horario || "-"}`;
+  const v = (k: string) => (answers[k]?.trim() ? answers[k] : "Não informado");
+  const whatsappMsg = `Olá! Quero um diagnóstico do meu Perfil no Google/Maps.
+
+📌 Segmento: ${v("nicho")}
+📍 Região: ${v("regiao")}
+🎯 Objetivo: ${v("objetivo")}
+📞 Ligações/mês: ${v("ligacoes")}
+✅ Perfil verificado: ${v("perfilVerificado")}
+🕘 Horário de contato: ${v("horario")}
+
+Pode me orientar os próximos passos?`;
+
+  const [waFeedback, setWaFeedback] = useState(false);
+  const sendWhatsApp = () => {
+    setWaFeedback(true);
+    window.open(`https://wa.me/5585992113249?text=${encodeURIComponent(whatsappMsg)}`, "_blank", "noopener,noreferrer");
+    setTimeout(() => setWaFeedback(false), 2000);
+  };
 
   const reset = () => {
     setStep(0);
