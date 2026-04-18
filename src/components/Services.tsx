@@ -85,14 +85,13 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-              <a
-                href={buildWhatsAppLink(s.serviceName)}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => openAgentJP(s.serviceName)}
                 className="text-primary text-sm font-medium hover:underline"
               >
                 Quero detalhes →
-              </a>
+              </button>
             </motion.div>
           ))}
         </div>
