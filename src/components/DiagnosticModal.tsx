@@ -169,20 +169,37 @@ Pode me orientar os próximos passos?`;
             </div>
           </>
         ) : (
+            <div className="mt-4">
+              <button
+                onClick={sendWhatsApp}
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+              >
+                <MessageCircle size={16} /> Enviar no WhatsApp
+              </button>
+              {waFeedback && (
+                <p className="text-xs text-center text-muted-foreground mt-2">Abrindo WhatsApp…</p>
+              )}
+              <p className="text-[11px] text-center text-muted-foreground mt-2">
+                Campos vazios serão enviados como "Não informado".
+              </p>
+            </div>
+          </>
+        ) : (
           <div className="text-center py-4">
             <CheckCircle className="text-primary mx-auto mb-4" size={48} />
             <h3 className="text-xl font-heading font-bold mb-2">Obrigado!</h3>
             <p className="text-muted-foreground text-sm mb-6">
               Suas respostas foram registradas. Envie agora pelo WhatsApp para agilizar o atendimento.
             </p>
-            <a
-              href={`https://wa.me/5585992113249?text=${encodeURIComponent(whatsappMsg)}`}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={sendWhatsApp}
               className="inline-flex items-center gap-2 bg-[#25D366] text-[#fff] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
             >
               <MessageCircle size={18} /> Enviar respostas no WhatsApp
-            </a>
+            </button>
+            {waFeedback && (
+              <p className="text-xs text-muted-foreground mt-2">Abrindo WhatsApp…</p>
+            )}
             <button onClick={reset} className="block mx-auto mt-4 text-sm text-muted-foreground hover:text-foreground">
               Fechar
             </button>
