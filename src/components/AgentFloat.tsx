@@ -22,12 +22,12 @@ const buildGreeting = (servico?: string) => {
 };
 
 const quickActions = [
-  { label: "Quero aparecer no Google Maps", icon: MapPin, msg: "Quero aparecer melhor no Google Maps. Meu nicho é ____ e eu atuo em ____." },
-  { label: "Criar meu Perfil do Google", icon: Globe, msg: "Ainda não tenho Perfil da Empresa no Google. Como funciona a criação e verificação?" },
-  { label: "Melhorar avaliações", icon: Star, msg: "Quero aumentar e responder avaliações para melhorar reputação. Qual o melhor plano?" },
-  { label: "Mais ligações e rotas", icon: Phone, msg: "Quero aumentar ligações/rotas/mensagens pelo Google. O que precisa ajustar no perfil?" },
-  { label: "Quero um site", icon: Globe, msg: "Quero um site otimizado para conversão e SEO local. Como vocês trabalham isso?" },
-  { label: "Falar no WhatsApp", icon: Send, msg: "__whatsapp__" },
+  { label: "Quero aparecer no Google Maps", icon: MapPin, service: "Aparecer no Google Maps" },
+  { label: "Criar meu Perfil do Google", icon: Globe, service: "Criação de Perfil da Empresa no Google" },
+  { label: "Melhorar avaliações", icon: Star, service: "Reputação/Avaliações no Google" },
+  { label: "Mais ligações e rotas", icon: Phone, service: "Aumentar ligações e rotas (Conversão)" },
+  { label: "Quero um site", icon: Globe, service: "Criação de Site" },
+  { label: "Falar no WhatsApp", icon: Send, service: null },
 ];
 
 interface AgentFloatProps {
