@@ -181,7 +181,7 @@ const AgentFloat = ({ onOpenQuiz }: AgentFloatProps) => {
                         className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-[hsl(var(--muted))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--primary))] hover:text-[hsl(var(--primary-foreground))] transition-colors"
                       >
                         <action.icon size={13} />
-                        {copiedIdx === i ? "Copiado! Cole no chat →" : action.label}
+                        {action.label}
                       </button>
                     ))}
                   </div>
