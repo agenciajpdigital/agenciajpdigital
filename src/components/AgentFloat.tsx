@@ -54,7 +54,6 @@ interface AgentFloatProps {
 
 const AgentFloat = ({ onOpenQuiz }: AgentFloatProps) => {
   const [open, setOpen] = useState(false);
-  const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [contextCopied, setContextCopied] = useState(false);
 
