@@ -58,15 +58,16 @@ const AgentFloat = ({ onOpenQuiz }: AgentFloatProps) => {
     : greeting;
 
   const handleQuickAction = (action: typeof quickActions[0]) => {
-    if (action.msg === "__whatsapp__") {
+    if (action.label === "Falar no WhatsApp") {
       window.open(buildWhatsAppLink(selectedService || undefined), "_blank");
       return;
     }
-    navigator.clipboard.writeText(action.msg).then(() => {
-      setCopiedIdx(quickActions.indexOf(action));
-      setTimeout(() => setCopiedIdx(null), 2000);
-    });
-    window.open(AGENT_LINK, "_blank");
+    if (action.service) {
+      // Abre WhatsApp diretamente com mensagem pré-preenchida do serviço
+      const msg = buildWhatsAppServiceMessage(action.service);
+      const link = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+      window.open(link, "_blank");
+    }
   };
 
   const handleCopyContext = () => {
