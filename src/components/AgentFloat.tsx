@@ -21,13 +21,31 @@ const buildGreeting = (servico?: string) => {
   return `Olá! Vi que você tem interesse em "${servico}". Sou o Agente JP, consultor local da JP Digital. Posso te explicar como esse serviço funciona, os benefícios reais (visibilidade local, ligações, rotas e mensagens) e qual é o próximo passo ideal pro seu negócio. Me conta: qual é o seu nicho e em qual bairro/cidade você atua?`;
 };
 
+const buildWhatsAppServiceMessage = (servico: string) => {
+  return `Olá! 👋 Vim pelo site e quero ajuda com o serviço: *${servico}*.
+
+Para eu te orientar melhor, me responda rapidinho:
+
+1) Nome da empresa:
+
+2) Nicho/Segmento:
+
+3) Região (bairro/cidade):
+
+4) Perfil verificado no Google? (Sim/Não/Não sei)
+
+5) Melhor horário de contato: (Manhã/Tarde/Noite)
+
+Assim que você responder, eu já continuo com o diagnóstico e próximos passos.`;
+};
+
 const quickActions = [
-  { label: "Quero aparecer no Google Maps", icon: MapPin, msg: "Quero aparecer melhor no Google Maps. Meu nicho é ____ e eu atuo em ____." },
-  { label: "Criar meu Perfil do Google", icon: Globe, msg: "Ainda não tenho Perfil da Empresa no Google. Como funciona a criação e verificação?" },
-  { label: "Melhorar avaliações", icon: Star, msg: "Quero aumentar e responder avaliações para melhorar reputação. Qual o melhor plano?" },
-  { label: "Mais ligações e rotas", icon: Phone, msg: "Quero aumentar ligações/rotas/mensagens pelo Google. O que precisa ajustar no perfil?" },
-  { label: "Quero um site", icon: Globe, msg: "Quero um site otimizado para conversão e SEO local. Como vocês trabalham isso?" },
-  { label: "Falar no WhatsApp", icon: Send, msg: "__whatsapp__" },
+  { label: "Quero aparecer no Google Maps", icon: MapPin, service: "Aparecer no Google Maps" },
+  { label: "Criar meu Perfil do Google", icon: Globe, service: "Criação de Perfil da Empresa no Google" },
+  { label: "Melhorar avaliações", icon: Star, service: "Reputação/Avaliações no Google" },
+  { label: "Mais ligações e rotas", icon: Phone, service: "Aumentar ligações e rotas (Conversão)" },
+  { label: "Quero um site", icon: Globe, service: "Criação de Site" },
+  { label: "Falar no WhatsApp", icon: Send, service: null },
 ];
 
 interface AgentFloatProps {
@@ -36,7 +54,6 @@ interface AgentFloatProps {
 
 const AgentFloat = ({ onOpenQuiz }: AgentFloatProps) => {
   const [open, setOpen] = useState(false);
-  const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [contextCopied, setContextCopied] = useState(false);
 
@@ -58,15 +75,16 @@ const AgentFloat = ({ onOpenQuiz }: AgentFloatProps) => {
     : greeting;
 
   const handleQuickAction = (action: typeof quickActions[0]) => {
-    if (action.msg === "__whatsapp__") {
+    if (action.label === "Falar no WhatsApp") {
       window.open(buildWhatsAppLink(selectedService || undefined), "_blank");
       return;
     }
-    navigator.clipboard.writeText(action.msg).then(() => {
-      setCopiedIdx(quickActions.indexOf(action));
-      setTimeout(() => setCopiedIdx(null), 2000);
-    });
-    window.open(AGENT_LINK, "_blank");
+    if (action.service) {
+      // Abre WhatsApp diretamente com mensagem pré-preenchida do serviço
+      const msg = buildWhatsAppServiceMessage(action.service);
+      const link = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+      window.open(link, "_blank");
+    }
   };
 
   const handleCopyContext = () => {
@@ -163,7 +181,7 @@ const AgentFloat = ({ onOpenQuiz }: AgentFloatProps) => {
                         className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-[hsl(var(--muted))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--primary))] hover:text-[hsl(var(--primary-foreground))] transition-colors"
                       >
                         <action.icon size={13} />
-                        {copiedIdx === i ? "Copiado! Cole no chat →" : action.label}
+                        {action.label}
                       </button>
                     ))}
                   </div>
