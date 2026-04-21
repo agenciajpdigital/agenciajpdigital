@@ -21,6 +21,24 @@ const buildGreeting = (servico?: string) => {
   return `Olá! Vi que você tem interesse em "${servico}". Sou o Agente JP, consultor local da JP Digital. Posso te explicar como esse serviço funciona, os benefícios reais (visibilidade local, ligações, rotas e mensagens) e qual é o próximo passo ideal pro seu negócio. Me conta: qual é o seu nicho e em qual bairro/cidade você atua?`;
 };
 
+const buildWhatsAppServiceMessage = (servico: string) => {
+  return `Olá! 👋 Vim pelo site e quero ajuda com o serviço: *${servico}*.
+
+Para eu te orientar melhor, me responda rapidinho:
+
+1) Nome da empresa:
+
+2) Nicho/Segmento:
+
+3) Região (bairro/cidade):
+
+4) Perfil verificado no Google? (Sim/Não/Não sei)
+
+5) Melhor horário de contato: (Manhã/Tarde/Noite)
+
+Assim que você responder, eu já continuo com o diagnóstico e próximos passos.`;
+};
+
 const quickActions = [
   { label: "Quero aparecer no Google Maps", icon: MapPin, service: "Aparecer no Google Maps" },
   { label: "Criar meu Perfil do Google", icon: Globe, service: "Criação de Perfil da Empresa no Google" },
