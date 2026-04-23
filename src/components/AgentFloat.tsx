@@ -6,12 +6,13 @@ import agentAvatar from "@/assets/agente-vendedor-jp.png";
 const WHATSAPP_NUMBER = "5585992113249";
 const AGENT_LINK = "https://chatgpt.com/g/g-69c098d9fbc4819193c81eba0a16a4fe-vendedor-agencia-jp-digital";
 
+const WHATSAPP_MSG = "Olá! Vim pelo site e tenho interesse no atendimento. Gostaria de mais informações para agendar ou tirar minhas dúvidas.";
+
 const buildWhatsAppLink = (servico?: string) => {
-  const intro = servico
-    ? `Olá! Vim do site e tenho interesse no serviço: ${servico}.`
-    : "Olá! Vim do site e quero um diagnóstico do meu negócio no Google/Maps.";
-  const msg = `${intro}\n\nNicho: ____.\nBairro/Cidade: ____.\nTenho Perfil do Google? (Sim/Não/Não sei).`;
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+  if (servico) {
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Vim do site e tenho interesse no serviço: ${servico}.\n\nGostaria de mais informações para agendar ou tirar minhas dúvidas.`)}`;
+  }
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MSG)}`;
 };
 
 const buildGreeting = (servico?: string) => {

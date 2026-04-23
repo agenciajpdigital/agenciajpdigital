@@ -3,7 +3,8 @@ import { MapPin, Clock, Navigation, MessageCircle } from "lucide-react";
 import locationCity from "@/assets/location-city.jpg";
 
 const MAPS_LINK = "https://www.google.com/maps/place/Ag%C3%AAncia+JP+Digital+%E2%80%93+Marketing+Digital+em+Fortaleza/@-3.8022612,-38.5948276,17z/data=!4m6!3m5!1s0x7c74da2e6ba5a6d:0x5e79f0d9817dbac9!8m2!3d-3.8022612!4d-38.5922473!16s%2Fg%2F11s1t7b436";
-const WHATSAPP_LINK = "https://wa.me/5585992113249?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es.";
+const WHATSAPP_MSG = "Olá! Vim pelo site e tenho interesse no atendimento. Gostaria de mais informações para agendar ou tirar minhas dúvidas.";
+const WHATSAPP_LINK = `https://wa.me/5585992113249?text=${encodeURIComponent(WHATSAPP_MSG)}`;
 
 const LocationSection = () => {
   return (

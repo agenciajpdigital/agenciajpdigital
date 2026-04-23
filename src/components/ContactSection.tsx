@@ -4,7 +4,8 @@ import { Send, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import contactSupport from "@/assets/contact-support.jpg";
 
-const WHATSAPP_LINK = "https://wa.me/5585992113249?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es.";
+const WHATSAPP_MSG = "Olá! Vim pelo site e tenho interesse no atendimento. Gostaria de mais informações para agendar ou tirar minhas dúvidas.";
+const WHATSAPP_LINK = `https://wa.me/5585992113249?text=${encodeURIComponent(WHATSAPP_MSG)}`;
 
 const ContactSection = () => {
   const [form, setForm] = useState({
