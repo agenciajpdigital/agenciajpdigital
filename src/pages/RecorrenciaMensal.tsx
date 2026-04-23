@@ -339,7 +339,7 @@ const RecorrenciaMensal = () => {
       </section>
 
       <Footer />
-      <WhatsAppFloat />
+      <WhatsAppFloat onOpenQuiz={() => setQuizOpen(true)} />
       <DiagnosticModal open={quizOpen} onClose={() => setQuizOpen(false)} />
       <RecorrenciaMensalDiagnosticModal open={diagOpen} onClose={() => setDiagOpen(false)} />
     </div>
