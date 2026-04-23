@@ -88,16 +88,16 @@ const DiagnosticModal = ({ open, onClose }: DiagnosticModalProps) => {
   const v = (k: string) => (answers[k]?.trim() ? answers[k] : "Não informado");
 
   const buildWhatsappMsg = () => {
-    let msg = `Olá! 👋 Vim pelo site e quero um diagnóstico do meu Perfil no Google/Maps.
+    let msg = `Olá! Vim pelo site e quero um diagnóstico do meu Perfil no Google/Maps.
 
-🏢 Nome da empresa: ${v("empresa")}
-📌 Nicho/Segmento: ${v("nicho")}
-📍 Região: ${v("regiao")}
-✅ Perfil verificado: ${v("perfilVerificado")}
-🕘 Horário de contato: ${v("horario")}
-🎯 Objetivo: ${v("objetivo")}
-📞 Ligações/mês: ${v("ligacoes")}
-🔗 Link do Google Maps: ${v("linkMaps")}
+Nome da empresa: ${v("empresa")}
+Nicho/Segmento: ${v("nicho")}
+Região: ${v("regiao")}
+Perfil verificado: ${v("perfilVerificado")}
+Horário de contato: ${v("horario")}
+Objetivo: ${v("objetivo")}
+Ligações/mês: ${v("ligacoes")}
+Link do Google Maps: ${v("linkMaps")}
 
 Pode me orientar os próximos passos?`;
     return msg;
