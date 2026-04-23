@@ -3,10 +3,12 @@ import { MapPin, Clock, Navigation, MessageCircle } from "lucide-react";
 import locationCity from "@/assets/location-city.jpg";
 
 const MAPS_LINK = "https://www.google.com/maps/place/Ag%C3%AAncia+JP+Digital+%E2%80%93+Marketing+Digital+em+Fortaleza/@-3.8022612,-38.5948276,17z/data=!4m6!3m5!1s0x7c74da2e6ba5a6d:0x5e79f0d9817dbac9!8m2!3d-3.8022612!4d-38.5922473!16s%2Fg%2F11s1t7b436";
-const WHATSAPP_MSG = "Olá! Vim pelo site e tenho interesse no atendimento. Gostaria de mais informações para agendar ou tirar minhas dúvidas.";
-const WHATSAPP_LINK = `https://wa.me/5585992113249?text=${encodeURIComponent(WHATSAPP_MSG)}`;
 
-const LocationSection = () => {
+interface LocationSectionProps {
+  onOpenQuiz?: () => void;
+}
+
+const LocationSection = ({ onOpenQuiz }: LocationSectionProps) => {
   return (
     <section id="localizacao" className="py-20 md:py-28 circuit-bg relative overflow-hidden">
       {/* Background image */}
@@ -80,14 +82,13 @@ const LocationSection = () => {
               >
                 <Navigation size={16} /> Como chegar
               </a>
-              <a
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={onOpenQuiz}
                 className="flex items-center justify-center gap-2 border border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary/10 transition-colors"
               >
                 <MessageCircle size={16} /> Falar no WhatsApp
-              </a>
+              </button>
             </div>
           </div>
         </div>

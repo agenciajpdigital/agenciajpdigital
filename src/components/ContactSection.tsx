@@ -4,10 +4,11 @@ import { Send, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import contactSupport from "@/assets/contact-support.jpg";
 
-const WHATSAPP_MSG = "Olá! Vim pelo site e tenho interesse no atendimento. Gostaria de mais informações para agendar ou tirar minhas dúvidas.";
-const WHATSAPP_LINK = `https://wa.me/5585992113249?text=${encodeURIComponent(WHATSAPP_MSG)}`;
+interface ContactSectionProps {
+  onOpenQuiz?: () => void;
+}
 
-const ContactSection = () => {
+const ContactSection = ({ onOpenQuiz }: ContactSectionProps) => {
   const [form, setForm] = useState({
     nome: "",
     whatsapp: "",
@@ -99,10 +100,10 @@ const ContactSection = () => {
                 className="flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity flex-1">
                 <Send size={16} /> Enviar e pedir diagnóstico
               </button>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"
+              <button type="button" onClick={onOpenQuiz}
                 className="flex items-center justify-center gap-2 border border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary/10 transition-colors flex-1">
                 <MessageCircle size={16} /> Falar no WhatsApp
-              </a>
+              </button>
             </div>
           </motion.form>
         </div>
