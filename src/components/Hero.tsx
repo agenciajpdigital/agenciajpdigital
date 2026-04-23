@@ -2,9 +2,6 @@ import { motion } from "framer-motion";
 import { MapPin, TrendingUp, MessageCircle } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
-const WHATSAPP_MSG = "Olá! Vim pelo site e tenho interesse no atendimento. Gostaria de mais informações para agendar ou tirar minhas dúvidas.";
-const WHATSAPP_LINK = `https://wa.me/5585992113249?text=${encodeURIComponent(WHATSAPP_MSG)}`;
-
 interface HeroProps {
   onOpenQuiz: () => void;
 }
@@ -42,14 +39,13 @@ const Hero = ({ onOpenQuiz }: HeroProps) => {
             >
               Pedir diagnóstico gratuito
             </button>
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={onOpenQuiz}
               className="border border-primary text-primary px-8 py-3.5 rounded-lg font-semibold text-base hover:bg-primary/10 transition-colors text-center inline-flex items-center justify-center gap-2"
             >
               <MessageCircle size={18} /> Falar no WhatsApp
-            </a>
+            </button>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 text-sm text-muted-foreground">

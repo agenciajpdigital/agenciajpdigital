@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { X, ArrowRight, ArrowLeft, CheckCircle, MessageCircle } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface DiagnosticModalProps {
   open: boolean;
@@ -9,10 +9,22 @@ interface DiagnosticModalProps {
 
 const questions = [
   {
+    label: "Qual o nome da sua empresa?",
+    type: "text" as const,
+    key: "empresa",
+    placeholder: "Ex: Padaria do João",
+  },
+  {
     label: "Qual é o nicho/segmento do seu negócio?",
     type: "text" as const,
     key: "nicho",
     placeholder: "Ex: Restaurante, Clínica, Loja de roupas...",
+  },
+  {
+    label: "Qual bairro/cidade alvo?",
+    type: "text" as const,
+    key: "regiao",
+    placeholder: "Ex: Aldeota, Meireles, Fortaleza...",
   },
   {
     label: "Você tem Perfil da Empresa no Google verificado?",
@@ -21,10 +33,10 @@ const questions = [
     options: ["Sim", "Não", "Não sei"],
   },
   {
-    label: "Qual bairro/cidade alvo?",
-    type: "text" as const,
-    key: "regiao",
-    placeholder: "Ex: Aldeota, Meireles, Fortaleza...",
+    label: "Melhor horário para contato?",
+    type: "options" as const,
+    key: "horario",
+    options: ["Manhã", "Tarde", "Noite"],
   },
   {
     label: "Quantas ligações/mês recebe pelo Google?",
@@ -39,10 +51,10 @@ const questions = [
     options: ["Ligações", "Rotas", "WhatsApp", "Visitas ao site", "Tudo"],
   },
   {
-    label: "Melhor horário para contato?",
-    type: "options" as const,
-    key: "horario",
-    options: ["Manhã", "Tarde", "Noite"],
+    label: "Link do seu Google Maps (opcional)",
+    type: "text" as const,
+    key: "linkMaps",
+    placeholder: "Cole aqui o link do seu perfil no Maps",
   },
 ];
 
@@ -50,6 +62,7 @@ const DiagnosticModal = ({ open, onClose }: DiagnosticModalProps) => {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [waFeedback, setWaFeedback] = useState(false);
 
   const current = questions[step];
   const isLast = step === questions.length - 1;
@@ -58,7 +71,7 @@ const DiagnosticModal = ({ open, onClose }: DiagnosticModalProps) => {
     setAnswers({ ...answers, [current.key]: val });
   };
 
-  const canNext = !!answers[current?.key]?.trim();
+  const canNext = current?.key === "linkMaps" ? true : !!answers[current?.key]?.trim();
 
   const next = () => {
     if (isLast) {
@@ -73,21 +86,30 @@ const DiagnosticModal = ({ open, onClose }: DiagnosticModalProps) => {
   };
 
   const v = (k: string) => (answers[k]?.trim() ? answers[k] : "Não informado");
-  const whatsappMsg = `Olá! Quero um diagnóstico do meu Perfil no Google/Maps.
 
-📌 Segmento: ${v("nicho")}
+  const buildWhatsappMsg = () => {
+    let msg = `Olá! 👋 Vim pelo site e quero um diagnóstico do meu Perfil no Google/Maps.
+
+🏢 Nome da empresa: ${v("empresa")}
+📌 Nicho/Segmento: ${v("nicho")}
 📍 Região: ${v("regiao")}
-🎯 Objetivo: ${v("objetivo")}
-📞 Ligações/mês: ${v("ligacoes")}
 ✅ Perfil verificado: ${v("perfilVerificado")}
 🕘 Horário de contato: ${v("horario")}
+🎯 Objetivo: ${v("objetivo")}
+📞 Ligações/mês: ${v("ligacoes")}
+🔗 Link do Google Maps: ${v("linkMaps")}
 
 Pode me orientar os próximos passos?`;
+    return msg;
+  };
 
-  const [waFeedback, setWaFeedback] = useState(false);
   const sendWhatsApp = () => {
     setWaFeedback(true);
-    window.open(`https://wa.me/5585992113249?text=${encodeURIComponent(whatsappMsg)}`, "_blank", "noopener,noreferrer");
+    window.open(
+      `https://wa.me/5585992113249?text=${encodeURIComponent(buildWhatsappMsg())}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
     setTimeout(() => setWaFeedback(false), 2000);
   };
 
@@ -107,7 +129,7 @@ Pode me orientar os próximos passos?`;
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="relative bg-card border border-border rounded-2xl w-full max-w-lg p-6 md:p-8 z-10"
+        className="relative bg-card border border-border rounded-2xl w-full max-w-lg p-6 md:p-8 z-10 max-h-[90vh] overflow-y-auto"
       >
         <button onClick={reset} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground" aria-label="Fechar">
           <X size={20} />
@@ -130,7 +152,7 @@ Pode me orientar os próximos passos?`;
                 value={answers[current.key] || ""}
                 onChange={(e) => setAnswer(e.target.value)}
                 placeholder={current.placeholder}
-                maxLength={200}
+                maxLength={300}
                 className="w-full bg-muted border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
               />
             ) : (
@@ -164,7 +186,7 @@ Pode me orientar os próximos passos?`;
                 disabled={!canNext}
                 className="flex items-center gap-1 bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold disabled:opacity-40 hover:opacity-90 transition-opacity"
               >
-                {isLast ? "Enviar" : "Próxima"} <ArrowRight size={16} />
+                {isLast ? "Pedir diagnóstico" : "Próxima"} <ArrowRight size={16} />
               </button>
             </div>
 
