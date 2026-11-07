@@ -21,7 +21,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header onOpenQuiz={() => setQuizOpen(true)} />
       <Hero onOpenQuiz={() => setQuizOpen(true)} />
-      <Services />
+      <Services onOpenQuiz={() => setQuizOpen(true)} />
       <RecorrenciaMensalHome onOpenQuiz={() => setQuizOpen(true)} />
       <RecorrenciaHome onOpenQuiz={() => setQuizOpen(true)} />
       <HowItWorks />
