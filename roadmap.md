@@ -11,10 +11,12 @@
 - [x] Alt text descritivo em todas as artes; aviso de conformidade no fim da seção
 - [x] Validado em desktop (3 colunas) e celular (1 coluna), modal abre/fecha, link do WhatsApp confere
 
+- [x] Trocar imagens dos serviços pelas 10 novas artes enviadas (associação por conteúdo/nome),
+      mantendo Otimização Completa, JP Video Local Pro e Logo Architect Pro como estavam;
+      bloco Ton exibido como parceria separada
+
 ## Pendente
-- [ ] 4 serviços sem arte fornecida: Consultoria em SEO Local, Criação de Conteúdo Estratégico Local,
-      JP Varejo Pro, Criação de Site Otimizado — cards mostram ícone + "Imagem do serviço em breve"
-      até a Agência enviar as artes (ou autorizar artes genéricas)
-- [ ] Confirmar se a parceria Ton está ativa para exibir o bloco (hoje oculto por `PARTNER_SOLUTION_VISIBLE = false`)
+- [ ] Único serviço sem arte: Criação de Conteúdo Estratégico Local — card mostra ícone +
+      "Imagem do serviço em breve" até a Agência enviar a arte
 - [ ] Revisar as artes fornecidas: elas trazem um número de WhatsApp diferente do oficial do site
       (5585 98211-2249 nas artes x 5585 99211-3249 no site) e frases de promessa dentro da imagem

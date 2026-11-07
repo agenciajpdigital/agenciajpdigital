@@ -17,15 +17,18 @@ import {
 } from "lucide-react";
 
 import otimizacaoPerfil from "@/assets/service-otimizacao-perfil-google.png.asset.json";
-import criacaoVerificacao from "@/assets/service-criacao-verificacao-perfil.png.asset.json";
-import gerenciamentoOrganico from "@/assets/service-gerenciamento-organico-gmn.png.asset.json";
-import gestaoAvaliacoes from "@/assets/service-gestao-avaliacoes-reputacao.png.asset.json";
-import palavrasChave from "@/assets/service-palavras-chave-locais.png.asset.json";
-import redesSociais from "@/assets/service-gerenciamento-redes-sociais.png.asset.json";
-import catalogoVideo from "@/assets/service-catalogo-digital-video.png.asset.json";
+import criacaoVerificacao from "@/assets/service-criacao-verificacao-perfil-v2.png.asset.json";
+import gerenciamentoOrganico from "@/assets/service-gerenciamento-organico-gmn-v2.png.asset.json";
+import gestaoAvaliacoes from "@/assets/service-gestao-avaliacoes-reputacao-v2.webp.asset.json";
+import palavrasChave from "@/assets/service-palavras-chave-locais-v2.png.asset.json";
+import consultoriaSeoLocal from "@/assets/service-consultoria-seo-local.png.asset.json";
+import redesSociais from "@/assets/service-gerenciamento-redes-sociais-v2.webp.asset.json";
+import catalogoVideo from "@/assets/service-catalogo-digital-video-v2.webp.asset.json";
 import jpVideoLocal from "@/assets/service-jp-video-local-pro.png.asset.json";
 import logoArchitect from "@/assets/service-logo-architect-pro.png.asset.json";
-import tonPagamentos from "@/assets/parceria-ton-pagamentos.png.asset.json";
+import jpVarejoPro from "@/assets/service-jp-varejo-pro.png.asset.json";
+import criacaoSiteOtimizado from "@/assets/service-criacao-site-otimizado.png.asset.json";
+import tonPagamentos from "@/assets/parceria-ton-pagamentos-v2.png.asset.json";
 
 export interface ServiceItem {
   id: string;
@@ -47,9 +50,10 @@ export interface ServiceCategory {
 
 /**
  * Soluções de Pagamento Ton é uma oferta parceira.
- * Mantida oculta até a Agência confirmar que a parceria está ativa.
+ * Exibida em área separada, identificada como parceria — nunca misturada aos
+ * serviços próprios da Agência.
  */
-export const PARTNER_SOLUTION_VISIBLE = false;
+export const PARTNER_SOLUTION_VISIBLE = true;
 
 const alt = (label: string) =>
   `Arte do serviço ${label} da Agência JP Digital, marketing digital em Fortaleza`;
@@ -146,7 +150,8 @@ export const serviceCategories: ServiceCategory[] = [
           "Recomendações priorizadas para a região atendida",
         ],
         icon: Compass,
-        alt: "Serviço de Consultoria em SEO Local para Empresas de Fortaleza da Agência JP Digital",
+        image: consultoriaSeoLocal.url,
+        alt: alt("Consultoria em SEO Local para Empresas de Fortaleza"),
       },
     ],
   },
@@ -243,7 +248,8 @@ export const serviceCategories: ServiceCategory[] = [
           "Peças para campanhas e divulgação de ofertas",
         ],
         icon: Tags,
-        alt: "Serviço JP Varejo Pro de encartes, tabloides e campanhas da Agência JP Digital",
+        image: jpVarejoPro.url,
+        alt: alt("JP Varejo Pro — Encartes, Tabloides e Campanhas"),
       },
       {
         id: "criacao-site-otimizado",
@@ -256,7 +262,8 @@ export const serviceCategories: ServiceCategory[] = [
           "Integração de chamadas para contato e práticas básicas de SEO",
         ],
         icon: Globe,
-        alt: "Serviço de Criação de Site Otimizado da Agência JP Digital",
+        image: criacaoSiteOtimizado.url,
+        alt: alt("Criação de Site Otimizado"),
       },
     ],
   },
