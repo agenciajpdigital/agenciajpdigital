@@ -16,7 +16,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-import otimizacaoPerfil from "@/assets/service-otimizacao-perfil-google.png.asset.json";
+import otimizacaoPerfil from "@/assets/service-otimizacao-perfil-google-v2.png.asset.json";
 import criacaoVerificacao from "@/assets/service-criacao-verificacao-perfil-v2.png.asset.json";
 import gerenciamentoOrganico from "@/assets/service-gerenciamento-organico-gmn-v2.png.asset.json";
 import gestaoAvaliacoes from "@/assets/service-gestao-avaliacoes-reputacao-v2.webp.asset.json";
@@ -24,8 +24,9 @@ import palavrasChave from "@/assets/service-palavras-chave-locais-v2.png.asset.j
 import consultoriaSeoLocal from "@/assets/service-consultoria-seo-local.png.asset.json";
 import redesSociais from "@/assets/service-gerenciamento-redes-sociais-v2.webp.asset.json";
 import catalogoVideo from "@/assets/service-catalogo-digital-video-v2.webp.asset.json";
-import jpVideoLocal from "@/assets/service-jp-video-local-pro.png.asset.json";
-import logoArchitect from "@/assets/service-logo-architect-pro.png.asset.json";
+import conteudoEstrategicoLocal from "@/assets/service-criacao-conteudo-estrategico-local.png.asset.json";
+import jpVideoLocal from "@/assets/service-jp-video-local-pro-v2.png.asset.json";
+import logoArchitect from "@/assets/service-logo-architect-pro-v2.png.asset.json";
 import jpVarejoPro from "@/assets/service-jp-varejo-pro.png.asset.json";
 import criacaoSiteOtimizado from "@/assets/service-criacao-site-otimizado.png.asset.json";
 import tonPagamentos from "@/assets/parceria-ton-pagamentos-v2.png.asset.json";
@@ -186,7 +187,8 @@ export const serviceCategories: ServiceCategory[] = [
           "Planejamento de conteúdo consistente com a marca",
         ],
         icon: PenLine,
-        alt: "Serviço de Criação de Conteúdo Estratégico Local da Agência JP Digital",
+        image: conteudoEstrategicoLocal.url,
+        alt: alt("Criação de Conteúdo Estratégico Local"),
       },
       {
         id: "catalogo-digital-video",

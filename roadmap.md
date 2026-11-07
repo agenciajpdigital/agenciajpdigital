@@ -15,8 +15,9 @@
       mantendo Otimização Completa, JP Video Local Pro e Logo Architect Pro como estavam;
       bloco Ton exibido como parceria separada
 
+- [x] Trocar as artes de Logo Architect Pro, JP Video Local Pro e Otimização Completa do Perfil
+      e dar arte a Criação de Conteúdo Estratégico Local (4 novas artes enviadas)
+
 ## Pendente
-- [ ] Único serviço sem arte: Criação de Conteúdo Estratégico Local — card mostra ícone +
-      "Imagem do serviço em breve" até a Agência enviar a arte
 - [ ] Revisar as artes fornecidas: elas trazem um número de WhatsApp diferente do oficial do site
       (5585 98211-2249 nas artes x 5585 99211-3249 no site) e frases de promessa dentro da imagem
