@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import logo from "@/assets/logo-jp-digital.png";
-import aboutTeam from "@/assets/about-team.jpg";
+import consultorSeoLocal from "@/assets/consultor-seo-local-agencia-jp-digital.jpg.asset.json";
 
 const AboutUs = () => {
   return (
@@ -42,9 +42,9 @@ const AboutUs = () => {
 
             <div className="relative rounded-xl overflow-hidden border border-border">
               <img
-                src={aboutTeam}
-                alt="Equipe de consultoria em marketing digital analisando estratégias de SEO local em Fortaleza"
-                className="w-full h-auto object-cover"
+                src={consultorSeoLocal.url}
+                alt="Consultor da Agência JP Digital trabalhando com marketing digital"
+                className="w-full h-auto object-cover object-center"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />

@@ -18,6 +18,9 @@
 - [x] Trocar as artes de Logo Architect Pro, JP Video Local Pro e Otimização Completa do Perfil
       e dar arte a Criação de Conteúdo Estratégico Local (4 novas artes enviadas)
 
+- [x] Trocar a imagem da seção "Quem Somos" pela foto anexada do consultor, com o texto
+      alternativo combinado; conferido em desktop e celular sem corte nem distorção
+
 ## Pendente
 - [ ] Revisar as artes fornecidas: elas trazem um número de WhatsApp diferente do oficial do site
       (5585 98211-2249 nas artes x 5585 99211-3249 no site) e frases de promessa dentro da imagem
