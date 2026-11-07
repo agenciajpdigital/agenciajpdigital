@@ -31,7 +31,7 @@ const ServiceCard = ({
       type="button"
       onClick={() => onOpen(service)}
       aria-label={`Abrir detalhes e imagem ampliada de ${service.name}`}
-      className="relative w-full h-72 bg-muted border-b border-border p-3 group/image"
+      className="relative w-full h-96 bg-muted border-b border-border p-3 group/image"
     >
       {service.image ? (
         <img
@@ -188,7 +188,7 @@ const Services = ({ onOpenQuiz }: ServicesProps) => {
                   type="button"
                   onClick={() => setActive(partnerSolution)}
                   aria-label={`Abrir detalhes e imagem ampliada de ${partnerSolution.name}`}
-                  className="w-full h-80 bg-muted border border-border rounded-xl p-3"
+                  className="w-full h-96 bg-muted border border-border rounded-xl p-3"
                 >
                   <img
                     src={partnerSolution.image}
