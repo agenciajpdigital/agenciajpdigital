@@ -52,7 +52,7 @@ const ServiceDetailModal = ({ service, onClose, onOpenQuiz }: ServiceDetailModal
         {/* Imagem inteira, sem corte */}
         {service.image ? (
           <a
-            href={service.image}
+            href={service.originalImage || service.image}
             target="_blank"
             rel="noopener noreferrer"
             title="Abrir imagem ampliada"
@@ -62,7 +62,8 @@ const ServiceDetailModal = ({ service, onClose, onOpenQuiz }: ServiceDetailModal
               src={service.image}
               alt={service.alt || service.name}
               className="w-full max-h-[46vh] object-contain mx-auto"
-              loading="lazy"
+              loading="eager"
+              decoding="async"
             />
             <span className="mt-2 flex items-center justify-center gap-1.5 text-xs text-muted-foreground">
               <ExternalLink size={12} /> Clique na imagem para ampliar

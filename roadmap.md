@@ -20,6 +20,8 @@
 
 - [x] Trocar a imagem da seção "Quem Somos" pela foto anexada do consultor, com o texto
       alternativo combinado; conferido em desktop e celular sem corte nem distorção
+- [x] Investigar carregamento e ampliação: corrigida entrega local de imagens, artes pesadas
+      comprimidas sem perda; 14 ampliações verificadas em 320/360/390/430/768/1280 px
 
 ## Pendente
 - [ ] Revisar as artes fornecidas: elas trazem um número de WhatsApp diferente do oficial do site

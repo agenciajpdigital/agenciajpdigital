@@ -17,19 +17,29 @@ import {
 } from "lucide-react";
 
 import otimizacaoPerfil from "@/assets/service-otimizacao-perfil-google-v2.png.asset.json";
+import otimizacaoPerfilLossless from "@/assets/service-otimizacao-perfil-google-v2-lossless.webp.asset.json";
 import criacaoVerificacao from "@/assets/service-criacao-verificacao-perfil-v2.png.asset.json";
+import criacaoVerificacaoLossless from "@/assets/service-criacao-verificacao-perfil-v2-lossless.webp.asset.json";
 import gerenciamentoOrganico from "@/assets/service-gerenciamento-organico-gmn-v2.png.asset.json";
+import gerenciamentoOrganicoLossless from "@/assets/service-gerenciamento-organico-gmn-v2-lossless.webp.asset.json";
 import gestaoAvaliacoes from "@/assets/service-gestao-avaliacoes-reputacao-v2.webp.asset.json";
 import palavrasChave from "@/assets/service-palavras-chave-locais-v2.png.asset.json";
+import palavrasChaveLossless from "@/assets/service-palavras-chave-locais-v2-lossless.webp.asset.json";
 import consultoriaSeoLocal from "@/assets/service-consultoria-seo-local.png.asset.json";
+import consultoriaSeoLocalLossless from "@/assets/service-consultoria-seo-local-lossless.webp.asset.json";
 import redesSociais from "@/assets/service-gerenciamento-redes-sociais-v2.webp.asset.json";
 import catalogoVideo from "@/assets/service-catalogo-digital-video-v2.webp.asset.json";
 import conteudoEstrategicoLocal from "@/assets/service-criacao-conteudo-estrategico-local.png.asset.json";
+import conteudoEstrategicoLocalLossless from "@/assets/service-criacao-conteudo-estrategico-local-lossless.webp.asset.json";
 import jpVideoLocal from "@/assets/service-jp-video-local-pro-v2.png.asset.json";
 import logoArchitect from "@/assets/service-logo-architect-pro-v2.png.asset.json";
+import logoArchitectLossless from "@/assets/service-logo-architect-pro-v2-lossless.webp.asset.json";
 import jpVarejoPro from "@/assets/service-jp-varejo-pro.png.asset.json";
+import jpVarejoProLossless from "@/assets/service-jp-varejo-pro-lossless.webp.asset.json";
 import criacaoSiteOtimizado from "@/assets/service-criacao-site-otimizado.png.asset.json";
+import criacaoSiteOtimizadoLossless from "@/assets/service-criacao-site-otimizado-lossless.webp.asset.json";
 import tonPagamentos from "@/assets/parceria-ton-pagamentos-v2.png.asset.json";
+import tonPagamentosLossless from "@/assets/parceria-ton-pagamentos-v2-lossless.webp.asset.json";
 
 export interface ServiceItem {
   id: string;
@@ -38,6 +48,7 @@ export interface ServiceItem {
   highlights: string[];
   icon: LucideIcon;
   image?: string;
+  originalImage?: string;
   alt?: string;
   note?: string;
 }
@@ -77,7 +88,8 @@ export const serviceCategories: ServiceCategory[] = [
           "Fotos, informações e atualizações",
         ],
         icon: SearchCheck,
-        image: otimizacaoPerfil.url,
+        image: otimizacaoPerfilLossless.url,
+        originalImage: otimizacaoPerfil.url,
         alt: alt("Otimização Completa do Perfil da Empresa no Google"),
         note: "Otimização pontual do perfil já existente.",
       },
@@ -92,7 +104,8 @@ export const serviceCategories: ServiceCategory[] = [
           "Acompanhamento das etapas de verificação",
         ],
         icon: BadgeCheck,
-        image: criacaoVerificacao.url,
+        image: criacaoVerificacaoLossless.url,
+        originalImage: criacaoVerificacao.url,
         alt: alt("Criação e Verificação do Perfil no Google"),
         note: "A aprovação e o prazo da verificação são decisões do Google.",
       },
@@ -107,7 +120,8 @@ export const serviceCategories: ServiceCategory[] = [
           "Acompanhamento de ações e oportunidades de melhoria",
         ],
         icon: RefreshCw,
-        image: gerenciamentoOrganico.url,
+        image: gerenciamentoOrganicoLossless.url,
+        originalImage: gerenciamentoOrganico.url,
         alt: alt("Gerenciamento Orgânico do Google Meu Negócio"),
         note: "Gerenciamento contínuo, diferente da otimização pontual.",
       },
@@ -137,7 +151,8 @@ export const serviceCategories: ServiceCategory[] = [
           "Recomendações para aplicar no perfil e no site",
         ],
         icon: KeyRound,
-        image: palavrasChave.url,
+        image: palavrasChaveLossless.url,
+        originalImage: palavrasChave.url,
         alt: alt("Estratégia de Palavras-chave Locais"),
       },
       {
@@ -151,7 +166,8 @@ export const serviceCategories: ServiceCategory[] = [
           "Recomendações priorizadas para a região atendida",
         ],
         icon: Compass,
-        image: consultoriaSeoLocal.url,
+        image: consultoriaSeoLocalLossless.url,
+        originalImage: consultoriaSeoLocal.url,
         alt: alt("Consultoria em SEO Local para Empresas de Fortaleza"),
       },
     ],
@@ -187,7 +203,8 @@ export const serviceCategories: ServiceCategory[] = [
           "Planejamento de conteúdo consistente com a marca",
         ],
         icon: PenLine,
-        image: conteudoEstrategicoLocal.url,
+        image: conteudoEstrategicoLocalLossless.url,
+        originalImage: conteudoEstrategicoLocal.url,
         alt: alt("Criação de Conteúdo Estratégico Local"),
       },
       {
@@ -237,7 +254,8 @@ export const serviceCategories: ServiceCategory[] = [
           "Orientações de aplicação da identidade",
         ],
         icon: Palette,
-        image: logoArchitect.url,
+        image: logoArchitectLossless.url,
+        originalImage: logoArchitect.url,
         alt: alt("Logo Architect Pro 3.0 — Identidade Visual"),
       },
       {
@@ -250,7 +268,8 @@ export const serviceCategories: ServiceCategory[] = [
           "Peças para campanhas e divulgação de ofertas",
         ],
         icon: Tags,
-        image: jpVarejoPro.url,
+        image: jpVarejoProLossless.url,
+        originalImage: jpVarejoPro.url,
         alt: alt("JP Varejo Pro — Encartes, Tabloides e Campanhas"),
       },
       {
@@ -264,7 +283,8 @@ export const serviceCategories: ServiceCategory[] = [
           "Integração de chamadas para contato e práticas básicas de SEO",
         ],
         icon: Globe,
-        image: criacaoSiteOtimizado.url,
+        image: criacaoSiteOtimizadoLossless.url,
+        originalImage: criacaoSiteOtimizado.url,
         alt: alt("Criação de Site Otimizado"),
       },
     ],
@@ -282,7 +302,8 @@ export const partnerSolution: ServiceItem = {
     "Encaminhamento para conhecer condições e contratação diretamente com a Ton",
   ],
   icon: CreditCard,
-  image: tonPagamentos.url,
+  image: tonPagamentosLossless.url,
+  originalImage: tonPagamentos.url,
   alt: alt("Soluções de Pagamento Ton, solução parceira da Agência JP Digital"),
   note:
     "Solução parceira. Condições, taxas e contratação são informados e contratados diretamente com a Ton.",
