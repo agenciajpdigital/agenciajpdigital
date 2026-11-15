@@ -237,12 +237,19 @@ const Services = ({ onOpenQuiz }: ServicesProps) => {
                   aria-label={`Abrir detalhes e imagem ampliada de ${partnerSolution.name}`}
                   className="w-full h-96 bg-muted border border-border rounded-xl p-3"
                 >
-                  <img
-                    src={partnerSolution.image}
-                    alt={partnerSolution.alt}
-                    loading="lazy"
-                    className="w-full h-full object-contain"
-                  />
+                  {partnerSolution.video ? (
+                    <ServiceVideo
+                      src={partnerSolution.video}
+                      label={partnerSolution.alt || partnerSolution.name}
+                    />
+                  ) : (
+                    <img
+                      src={partnerSolution.image}
+                      alt={partnerSolution.alt}
+                      loading="lazy"
+                      className="w-full h-full object-contain"
+                    />
+                  )}
                 </button>
               </div>
             </div>

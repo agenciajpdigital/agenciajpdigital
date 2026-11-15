@@ -31,7 +31,13 @@ describe("original service artwork", () => {
       "conteudo-estrategico-local": "08-criacao-conteudo-estrategico-local.mp4",
       "catalogo-digital-video": "09-catalogo-digital-video.mp4",
       "jp-video-local-pro": "10-jp-video-local-pro.mp4",
+      "logo-architect-pro": "11-logo-architect-pro-identidade-visual.mp4",
+      "jp-varejo-pro": "12-jp-varejo-pro-encartes-tabloides-campanhas.mp4",
+      "criacao-site-otimizado": "13-criacao-site-otimizado.mp4",
+      "solucoes-pagamento-ton": "14-parceria-solucoes-pagamento-ton.mp4",
     };
+
+    expect(Object.keys(expectedVideo)).toHaveLength(services.length);
 
     for (const [id, filename] of Object.entries(expectedVideo)) {
       const service = services.find((item) => item.id === id);
@@ -40,12 +46,6 @@ describe("original service artwork", () => {
           `^https://agenciajpdigital\\.lovable\\.app/__l5e/assets-v1/[^/]+/${filename}$`,
         ),
       );
-    }
-
-    for (const service of services) {
-      if (!(service.id in expectedVideo)) {
-        expect(service.video).toBeUndefined();
-      }
     }
   });
 });

@@ -52,6 +52,10 @@ import videoRedesSociais from "@/assets/07-gerenciamento-redes-sociais.mp4.asset
 import videoConteudoEstrategico from "@/assets/08-criacao-conteudo-estrategico-local.mp4.asset.json";
 import videoCatalogoDigital from "@/assets/09-catalogo-digital-video.mp4.asset.json";
 import videoJpVideoLocalPro from "@/assets/10-jp-video-local-pro.mp4.asset.json";
+import videoLogoArchitect from "@/assets/11-logo-architect-pro-identidade-visual.mp4.asset.json";
+import videoJpVarejoPro from "@/assets/12-jp-varejo-pro-encartes-tabloides-campanhas.mp4.asset.json";
+import videoCriacaoSite from "@/assets/13-criacao-site-otimizado.mp4.asset.json";
+import videoParceriaTon from "@/assets/14-parceria-solucoes-pagamento-ton.mp4.asset.json";
 
 export interface ServiceItem {
   id: string;
@@ -280,6 +284,7 @@ export const serviceCategories: ServiceCategory[] = [
         icon: Palette,
         image: hostedAsset(logoArchitectLossless.url),
         originalImage: hostedAsset(logoArchitect.url),
+        video: hostedAsset(videoLogoArchitect.url),
         alt: alt("Logo Architect Pro 3.0 — Identidade Visual"),
       },
       {
@@ -294,6 +299,7 @@ export const serviceCategories: ServiceCategory[] = [
         icon: Tags,
         image: hostedAsset(jpVarejoProLossless.url),
         originalImage: hostedAsset(jpVarejoPro.url),
+        video: hostedAsset(videoJpVarejoPro.url),
         alt: alt("JP Varejo Pro — Encartes, Tabloides e Campanhas"),
       },
       {
@@ -309,6 +315,7 @@ export const serviceCategories: ServiceCategory[] = [
         icon: Globe,
         image: hostedAsset(criacaoSiteOtimizadoLossless.url),
         originalImage: hostedAsset(criacaoSiteOtimizado.url),
+        video: hostedAsset(videoCriacaoSite.url),
         alt: alt("Criação de Site Otimizado"),
       },
     ],
@@ -328,6 +335,7 @@ export const partnerSolution: ServiceItem = {
   icon: CreditCard,
   image: hostedAsset(tonPagamentosLossless.url),
   originalImage: hostedAsset(tonPagamentos.url),
+  video: hostedAsset(videoParceriaTon.url),
   alt: alt("Soluções de Pagamento Ton, solução parceira da Agência JP Digital"),
   note:
     "Solução parceira. Condições, taxas e contratação são informados e contratados diretamente com a Ton.",
