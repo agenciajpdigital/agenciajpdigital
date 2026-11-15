@@ -27,6 +27,9 @@
 - [x] Auditoria de imagens no domínio agenciajpdigital.com.br (Vercel): artes apontam para endereço
       permanente, páginas internas abrem, imagem de compartilhamento expirada removida
 
+- [x] Trocar as imagens dos 10 cartões que receberam vídeo pelos vídeos enviados, no serviço
+      correto, sem som e em loop; modal mantém a arte inteira; conferido em 320/360/390/430/768/1280 px
+
 ## Pendente
 - [ ] Revisar as artes fornecidas: elas trazem um número de WhatsApp diferente do oficial do site
       (5585 98211-2249 nas artes x 5585 99211-3249 no site) e frases de promessa dentro da imagem

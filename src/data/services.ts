@@ -42,6 +42,17 @@ import criacaoSiteOtimizadoLossless from "@/assets/service-criacao-site-otimizad
 import tonPagamentos from "@/assets/parceria-ton-pagamentos-v2.png.asset.json";
 import tonPagamentosLossless from "@/assets/parceria-ton-pagamentos-v2-lossless.webp.asset.json";
 
+import videoOtimizacaoPerfil from "@/assets/01-otimizacao-completa-perfil-empresa-google.mp4.asset.json";
+import videoCriacaoVerificacao from "@/assets/02-criacao-verificacao-perfil-google.mp4.asset.json";
+import videoGerenciamentoOrganico from "@/assets/03-gerenciamento-organico-perfil-google.mp4.asset.json";
+import videoGestaoAvaliacoes from "@/assets/04-gestao-avaliacoes-reputacao.mp4.asset.json";
+import videoPalavrasChave from "@/assets/05-estrategia-palavras-chave-locais.mp4.asset.json";
+import videoConsultoriaSeoLocal from "@/assets/06-consultoria-seo-local-fortaleza.mp4.asset.json";
+import videoRedesSociais from "@/assets/07-gerenciamento-redes-sociais.mp4.asset.json";
+import videoConteudoEstrategico from "@/assets/08-criacao-conteudo-estrategico-local.mp4.asset.json";
+import videoCatalogoDigital from "@/assets/09-catalogo-digital-video.mp4.asset.json";
+import videoJpVideoLocalPro from "@/assets/10-jp-video-local-pro.mp4.asset.json";
+
 export interface ServiceItem {
   id: string;
   name: string;
@@ -50,6 +61,8 @@ export interface ServiceItem {
   icon: LucideIcon;
   image?: string;
   originalImage?: string;
+  /** Vídeo em reprodução contínua e sem som exibido no cartão do serviço. */
+  video?: string;
   alt?: string;
   note?: string;
 }
@@ -91,6 +104,7 @@ export const serviceCategories: ServiceCategory[] = [
         icon: SearchCheck,
         image: hostedAsset(otimizacaoPerfilLossless.url),
         originalImage: hostedAsset(otimizacaoPerfil.url),
+        video: hostedAsset(videoOtimizacaoPerfil.url),
         alt: alt("Otimização Completa do Perfil da Empresa no Google"),
         note: "Otimização pontual do perfil já existente.",
       },
@@ -107,6 +121,7 @@ export const serviceCategories: ServiceCategory[] = [
         icon: BadgeCheck,
         image: hostedAsset(criacaoVerificacaoLossless.url),
         originalImage: hostedAsset(criacaoVerificacao.url),
+        video: hostedAsset(videoCriacaoVerificacao.url),
         alt: alt("Criação e Verificação do Perfil no Google"),
         note: "A aprovação e o prazo da verificação são decisões do Google.",
       },
@@ -123,6 +138,7 @@ export const serviceCategories: ServiceCategory[] = [
         icon: RefreshCw,
         image: hostedAsset(gerenciamentoOrganicoLossless.url),
         originalImage: hostedAsset(gerenciamentoOrganico.url),
+        video: hostedAsset(videoGerenciamentoOrganico.url),
         alt: alt("Gerenciamento Orgânico do Google Meu Negócio"),
         note: "Gerenciamento contínuo, diferente da otimização pontual.",
       },
@@ -138,6 +154,7 @@ export const serviceCategories: ServiceCategory[] = [
         ],
         icon: Star,
         image: hostedAsset(gestaoAvaliacoes.url),
+        video: hostedAsset(videoGestaoAvaliacoes.url),
         alt: alt("Gestão de Avaliações e Reputação"),
         note: "Não prometemos avaliações positivas nem resultados específicos.",
       },
@@ -154,6 +171,7 @@ export const serviceCategories: ServiceCategory[] = [
         icon: KeyRound,
         image: hostedAsset(palavrasChaveLossless.url),
         originalImage: hostedAsset(palavrasChave.url),
+        video: hostedAsset(videoPalavrasChave.url),
         alt: alt("Estratégia de Palavras-chave Locais"),
       },
       {
@@ -169,6 +187,7 @@ export const serviceCategories: ServiceCategory[] = [
         icon: Compass,
         image: hostedAsset(consultoriaSeoLocalLossless.url),
         originalImage: hostedAsset(consultoriaSeoLocal.url),
+        video: hostedAsset(videoConsultoriaSeoLocal.url),
         alt: alt("Consultoria em SEO Local para Empresas de Fortaleza"),
       },
     ],
@@ -191,6 +210,7 @@ export const serviceCategories: ServiceCategory[] = [
         ],
         icon: Share2,
         image: hostedAsset(redesSociais.url),
+        video: hostedAsset(videoRedesSociais.url),
         alt: alt("Gerenciamento de Redes Sociais"),
       },
       {
@@ -206,6 +226,7 @@ export const serviceCategories: ServiceCategory[] = [
         icon: PenLine,
         image: hostedAsset(conteudoEstrategicoLocalLossless.url),
         originalImage: hostedAsset(conteudoEstrategicoLocal.url),
+        video: hostedAsset(videoConteudoEstrategico.url),
         alt: alt("Criação de Conteúdo Estratégico Local"),
       },
       {
@@ -220,6 +241,7 @@ export const serviceCategories: ServiceCategory[] = [
         ],
         icon: Clapperboard,
         image: hostedAsset(catalogoVideo.url),
+        video: hostedAsset(videoCatalogoDigital.url),
         alt: alt("Catálogo Digital em Vídeo"),
       },
       {
@@ -234,6 +256,7 @@ export const serviceCategories: ServiceCategory[] = [
         ],
         icon: Video,
         image: hostedAsset(jpVideoLocal.url),
+        video: hostedAsset(videoJpVideoLocalPro.url),
         alt: alt("JP Video Local Pro"),
       },
     ],

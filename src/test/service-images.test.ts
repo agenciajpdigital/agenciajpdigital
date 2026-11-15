@@ -18,4 +18,34 @@ describe("original service artwork", () => {
       expect(service.originalImage).not.toBe(service.image);
     }
   });
+
+  it("plays each uploaded video on the service it represents", () => {
+    const expectedVideo: Record<string, string> = {
+      "otimizacao-completa-perfil": "01-otimizacao-completa-perfil-empresa-google.mp4",
+      "criacao-verificacao-perfil": "02-criacao-verificacao-perfil-google.mp4",
+      "gerenciamento-organico-gmn": "03-gerenciamento-organico-perfil-google.mp4",
+      "gestao-avaliacoes-reputacao": "04-gestao-avaliacoes-reputacao.mp4",
+      "estrategia-palavras-chave-locais": "05-estrategia-palavras-chave-locais.mp4",
+      "consultoria-seo-local-fortaleza": "06-consultoria-seo-local-fortaleza.mp4",
+      "gerenciamento-redes-sociais": "07-gerenciamento-redes-sociais.mp4",
+      "conteudo-estrategico-local": "08-criacao-conteudo-estrategico-local.mp4",
+      "catalogo-digital-video": "09-catalogo-digital-video.mp4",
+      "jp-video-local-pro": "10-jp-video-local-pro.mp4",
+    };
+
+    for (const [id, filename] of Object.entries(expectedVideo)) {
+      const service = services.find((item) => item.id === id);
+      expect(service?.video).toMatch(
+        new RegExp(
+          `^https://agenciajpdigital\\.lovable\\.app/__l5e/assets-v1/[^/]+/${filename}$`,
+        ),
+      );
+    }
+
+    for (const service of services) {
+      if (!(service.id in expectedVideo)) {
+        expect(service.video).toBeUndefined();
+      }
+    }
+  });
 });

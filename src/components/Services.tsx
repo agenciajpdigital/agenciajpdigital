@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle, Maximize2 } from "lucide-react";
 import {
@@ -13,6 +13,51 @@ import ServiceDetailModal from "@/components/ServiceDetailModal";
 interface ServicesProps {
   onOpenQuiz: () => void;
 }
+
+/**
+ * Vídeo do cartão: sem som, em loop e reproduzindo sozinho. Só carrega quando o
+ * cartão se aproxima da tela, para não baixar os dez vídeos de uma vez no celular.
+ */
+const ServiceVideo = ({ src, label }: { src: string; label: string }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [nearby, setNearby] = useState(false);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => setNearby(entries.some((entry) => entry.isIntersecting)),
+      { rootMargin: "300px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    el.muted = true;
+    if (nearby) {
+      el.play().catch(() => undefined);
+    } else {
+      el.pause();
+    }
+  }, [nearby]);
+
+  return (
+    <video
+      ref={videoRef}
+      src={nearby ? src : undefined}
+      muted
+      loop
+      playsInline
+      autoPlay
+      preload={nearby ? "auto" : "none"}
+      aria-label={label}
+      className="w-full h-full object-contain"
+    />
+  );
+};
 
 const ServiceCard = ({
   service,
@@ -33,7 +78,9 @@ const ServiceCard = ({
       aria-label={`Abrir detalhes e imagem ampliada de ${service.name}`}
       className="relative w-full h-96 bg-muted border-b border-border p-3 group/image"
     >
-      {service.image ? (
+      {service.video ? (
+        <ServiceVideo src={service.video} label={service.alt || service.name} />
+      ) : service.image ? (
         <img
           src={service.image}
           alt={service.alt || service.name}
