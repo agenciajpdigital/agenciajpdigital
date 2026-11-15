@@ -25,11 +25,11 @@ const Header = ({ onOpenQuiz }: HeaderProps) => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
         <a href="#inicio" className="flex items-center gap-2">
-          <img src={logo} alt="JP Digital" className="h-8 md:h-10 w-auto" />
+          <img src={logo} alt="JP Digital" className="h-10 md:h-12 w-auto shrink-0" />
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
           {navItems.map((item) => (
             <a
               key={item.href}

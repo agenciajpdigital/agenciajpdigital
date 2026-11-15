@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Concluído
+- [x] Ajustar somente banner e logo do cabeçalho: imagem mais clara, composição equilibrada e botões preservados; conferido em 320/390/430/1008/1280 px
 - [x] Recorrência Mensal: página dedicada, bloco na home (antes da trimestral), modal de diagnóstico próprio
 - [x] Botões "Quero detalhes" com WhatsApp identificado por serviço
 - [x] Agente Vendedor JP (botão flutuante + modal) com novo link do agente
